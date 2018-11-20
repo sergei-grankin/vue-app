@@ -6,7 +6,7 @@
 				<form>
 					<div class="form-group" :class="{'form-group-error': $v.email.$error}">
 						<label for="inputEmail1">Email address</label>
-						<input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
+						<input type="email" class="form-control" id="inputEmail1" placeholder="Enter email"
 							v-model="email"
 							:class="{'error-field': $v.email.$error}"
 							@change="$v.email.$touch()"
