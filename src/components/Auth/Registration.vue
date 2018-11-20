@@ -4,10 +4,12 @@
 			<div class="col-sm-12 mb-3">
 				<h4 class="mb-4">Registration</h4>
 				<form>
-					<div class="form-group">
+					<div class="form-group" :class="{'form-group-error': $v.email.$error}">
 						<label for="inputEmail1">Email address</label>
 						<input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
 							v-model="email"
+							:class="{'error-field': $v.email.$error}"
+							@change="$v.email.$touch()"
 						>
 					</div>
 					<div class="form-group">
@@ -30,7 +32,7 @@
 </template>
 
 <script>
-	import {required} from 'vuelidate/lib/validators';
+	import {required, email} from 'vuelidate/lib/validators';
 
 	export default {
 		data() {
@@ -39,10 +41,18 @@
 				password: '',
 				confirmPassword: ''
 			}
+		},
+		validations: {
+			email: {
+				required,
+				email
+			}
 		}
 	}
 </script>
 
 <style>
-
+	.form-group-error input {
+		border-color: #f00;
+	}
 </style>
