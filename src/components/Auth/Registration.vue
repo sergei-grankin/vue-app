@@ -11,11 +11,14 @@
 							:class="{'error-field': $v.email.$error}"
 							@change="$v.email.$touch()"
 						>
+						<div class="error" v-if="!$v.email.required">Field is required</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group" :class="{'form-group-error': $v.password.$error}">
 						<label for="inputPassword1">Password</label>
 						<input type="password" class="form-control" id="inputPassword1" placeholder="Password"
 							v-model="password"
+							:class="{'error-field': $v.password.$error}"
+							@change="$v.password.$touch()"
 						>
 					</div>
 					<div class="form-group">
@@ -46,6 +49,9 @@
 			email: {
 				required,
 				email
+			},
+			password: {
+				required
 			}
 		}
 	}
