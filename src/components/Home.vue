@@ -1,8 +1,12 @@
 <template>
 	<div class="container">
-		<div class="row mb-4">
+		<div class="row">
 			<div class="col-sm-12">
-				<h4 class="mb-3">Home</h4>
+				<h4 class="mb-4">Home</h4>
+			</div>
+		</div>
+		<div class="row mb-4">
+			<div class="col-lg-6">
 				<form @submit.prevent="newTask">
 					<div class="form-group" :class="{'form-group-error': $v.taskTitle.$error}">
 						<label>Task name</label>
@@ -35,15 +39,17 @@
 						</select>
 						<div class="error" v-if="!$v.taskDescription.required">Field is required</div>
 					</div>
+					<p>Enter task time</p>
 					<div class="form-group row">
-						<label class="col-sm-2 col-form-label">Task time:</label>
 						<div class="col-sm-2">
-							<input type="text" class="form-control" placeholder="Hours"
+							<label for="hours">Hours</label>
+							<input id="hours" type="text" class="form-control" placeholder="Hours"
 								v-model="taskHours"
 							>
 						</div>
 						<div class="col-sm-2">
-							<input type="text" class="form-control" placeholder="Minutes"
+							<label for="minutes">Minutes</label>
+							<input id="minutes" type="text" class="form-control" placeholder="Minutes"
 								v-model="taskMinutes"
 							>
 						</div>

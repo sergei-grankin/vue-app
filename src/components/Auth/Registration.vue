@@ -1,8 +1,12 @@
 <template>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12 mb-3">
+			<div class="col-sm-12">
 				<h4 class="mb-4">Registration</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 mb-3">
 				<form @submit.prevent="onSubmit">
 					<div class="form-group" :class="{'form-group-error': $v.email.$error}">
 						<label for="inputEmail">Email address</label>

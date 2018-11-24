@@ -2,15 +2,17 @@
 	<div id="app">
 		<div class="container">
 			<div class="row">
-				<ul class="nav">
-					<li
-						class="nav-item"
-						v-for="link in linkMenu"
-						v-bind:key="link.title"
-					>
-						<router-link :to="link.url">{{link.title}}</router-link>
-					</li>
-				</ul>
+				<div class="col-sm-12">
+					<ul class="nav">
+						<li
+							class="nav-item"
+							v-for="link in linkMenu"
+							v-bind:key="link.title"
+						>
+							<router-link :to="link.url">{{link.title}}</router-link>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<hr>
