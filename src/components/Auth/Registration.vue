@@ -92,6 +92,7 @@
 					}
 
 					console.log(user);
+					this.$store.dispatch('registerUser', user);
 
 					setTimeout(() => {
 						this.submitStatus = 'OK';
